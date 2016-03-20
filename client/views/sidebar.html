@@ -1,0 +1,22 @@
+<template name="sidebar">
+  <div class="sidebar">
+    <div class="sidebar__block{{#if unreadPublic}} unread{{/if}}{{#if isActivePublic}} active{{/if}}" data-id="public">
+	    Public room
+    </div>
+    {{#each privats}}
+	    <div class="sidebar__block{{#if unread}} unread{{/if}}{{#if isActive}} active{{/if}}" data-id="{{other}}">
+	    	<span class="sidebar__block__closer">X</span>
+	    	<span class="sidebar__block__name">
+				{{name}}
+	    	</span>
+	    </div>
+	{{/each}}
+	<div class="sidebar__other-users">
+		{{#each allUsers}}
+			<div class="sidebar__other-user" data-id="{{_id}}">
+				{{profile.name}}
+			</div>
+		{{/each}}		
+	</div>
+  </div>
+</template>

@@ -1,0 +1,27 @@
+<head>
+  <title>Chat</title>
+</head>
+ 
+<body>
+
+  {{> loginButtons align="right"}}
+
+  {{> sidebar }}
+
+  <div class="messages">
+
+    <h1 class="messages__header">Chat</h1>
+    <p class="messages__text">
+      Szerbusztok! Nagyon fejlett chat program.
+    </p>
+
+    {{> form}}
+
+    <div class="error hidden">
+      Please log in to have fun.
+    </div>
+    
+    {{> messages }}
+
+  </div>
+</body>

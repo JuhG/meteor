@@ -1,0 +1,29 @@
+.msg {
+	opacity: 1;
+	transition: all ease .2s;
+}
+
+.msg.hidden {
+	opacity: 0;
+	transform: translateX(-30px);
+}
+
+.sidebar__block {
+	opacity: 1;
+	transition: all ease .2s;	
+}
+
+.sidebar__block.hidden {
+	opacity: 0;
+	transform: translateX(-30px);
+}
+
+.sidebar__other-user {
+	opacity: 1;
+	transition: all ease .2s;	
+}
+
+.sidebar__other-user.hidden {
+	opacity: 0;
+	transform: translateX(-30px);
+}

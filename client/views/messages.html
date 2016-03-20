@@ -1,0 +1,15 @@
+<template name="messages">
+  {{#if Template.subscriptionsReady}}
+    <div class="messages__list">
+      {{#each messages}}
+        <div class="msg{{#if getRead}} unread{{/if}}">
+          <span class="msg__name{{#if getIfItIsMyMessage}} ownMessage{{/if}}" data-id="{{userId}}">{{name}}</span>:
+          <span class="msg__text">{{message}}</span>
+          <span class="msg__time">-- {{time}}</span>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    Loading...
+  {{/if}}
+</template>

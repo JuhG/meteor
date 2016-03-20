@@ -1,0 +1,203 @@
+$lightBlue: rgba(blue, 0.05);
+$darkBlue: rgba(blue, 0.5);
+$lightGreen: rgba(green, 0.1);
+$darkGreen: rgba(green, 0.5);
+$lightRed: rgba(red, 0.1);
+$darkRed: rgba(red, 0.5);
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+    font-family: Verdana, Geneva, sans-serif;
+    min-height: 100%;
+}
+
+//#############################################################################################################
+// MSG
+//#############################################################################################################
+ 
+.login-buttons-dropdown-align-right {
+	display: inline-block;
+    float: right;
+}
+
+//#############################################################################################################
+// Sidebar
+//#############################################################################################################
+
+$side-width: 250px;
+
+.sidebar {
+	position: fixed;
+	width: $side-width;
+	min-height: 100%;
+}
+
+.sidebar__block {
+	position: relative;
+	border: 1px solid $darkBlue;
+	cursor: pointer;
+	height: 30px;
+	text-align: center;
+	margin-right: 20px;
+	padding: 2px 5px;
+	margin-bottom: 5px;
+	&:before {
+		content: "";
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	&:first-child {
+		margin-top: 100px;
+	}
+	&.active {
+		background-color: $lightBlue;
+		font-weight: bold;
+		border-width: 3px;
+	}
+	&.unread {
+		background: $lightGreen;
+		border-color: $darkGreen;
+	}
+	&:hover {
+		margin-right: 10px;
+	}
+}
+
+.sidebar__block__closer {
+	display: inline-block;
+	font-weight: bold;
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	transition: all ease .3s;
+	&:hover {
+		color: $darkRed;
+		font-size: 24px;
+		top: 3px;
+	}
+}
+.sidebar__block__name {
+	margin-left: 20px;
+}
+.sidebar__block__all {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.sidebar__other-users {
+	margin-top: 100px;
+}
+.sidebar__other-user {
+	background-color: rgba(black, .1);
+	margin-bottom: 5px;
+	padding: 5px 0 5px 10px;
+	cursor: pointer;
+	margin-right: 20px;
+	&:hover {
+		font-weight: bold;
+	}
+}
+
+//#############################################################################################################
+// Messages
+//#############################################################################################################
+
+.messages {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: $side-width + 20px;
+	margin-right: 30px;
+	max-width: 60%;
+    max-width: -webkit-calc( 100% - #{$side-width} - 40px);
+    max-width: -moz-calc( 100% - #{$side-width} - 40px);
+    max-width: calc( 100% - #{$side-width} - 40px);
+}
+.messages__header {
+	margin-top: 30px;
+	border-bottom: 2px solid tomato;
+	letter-spacing: 3px;
+}
+.messages__text {
+	margin: 10px 0;
+}
+.messages__form {
+	margin-bottom: 20px;
+}
+.messages__form__input {
+	width: 300px;
+}
+
+//#############################################################################################################
+// MSG
+//#############################################################################################################
+
+.msg {
+	padding: 5px 10px;
+	margin-bottom: 3px;
+	border-left: 1px solid $darkBlue;
+	background-color: $lightBlue;
+}
+
+.msg.unread {
+	background: $lightGreen;
+	border-left: solid 3px $darkGreen;
+}
+
+.msg__name {
+	font-weight: bold;
+	cursor: pointer;
+	&:hover {
+		color: tomato;
+	}
+	&.ownMessage {
+		font-weight: normal;
+		cursor: initial;
+		&:hover {
+			color: initial;
+		}
+	}
+}
+
+.msg__time {
+	font-style: italic;
+	font-size: 12px;
+}
+
+
+//#############################################################################################################
+// ERROR
+//#############################################################################################################
+
+.error {
+	transition: all ease 1s;
+	background-color: $lightRed;
+	border: $darkRed solid 0px;
+	border-radius: 30px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 0px;
+	overflow: hidden;
+	height: 0;
+	opacity: 0;
+}
+
+.error.hidden {
+	display: none;
+}
+
+.error.focus {
+	opacity: 1;
+	height: 50px;
+	margin-bottom: 20px;
+	border: $darkRed solid 5px;
+}
+
+.error.submit {
+	font-size: 30px;
+	font-weight: bold;
+}
